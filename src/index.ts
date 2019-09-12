@@ -8,7 +8,7 @@ class Main {
 
         const files: string[] = readdirSync(INPUT_FOLDER_PATH);
         if (!files.length) console.error('No file found');
-        else files.forEach(async (file) => convertFileToXlsx(file));
+        else files.forEach(async (fileName: string) => convertFileToXlsx(fileName));
 
     }
 }

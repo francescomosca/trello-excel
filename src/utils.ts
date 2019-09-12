@@ -1,3 +1,5 @@
+import { promises as fs } from 'fs';
+
 import { HAS_PRIORITY_PLUGIN } from './config';
 import { Member } from './models/member.interface';
 
@@ -15,6 +17,8 @@ export const getUsersName = (boardMembers: Member[], cardMembersId: string[]): s
 export const getPriority = (cardPluginData): string => cardPluginData && cardPluginData.length && HAS_PRIORITY_PLUGIN
   ? JSON.parse(cardPluginData[0].value).priority
   : undefined;
+
+export const openJsonFile = async (filePath: string) =>  JSON.parse(await fs.readFile(filePath, 'utf-8'));
 
 /*
 "pluginData":[

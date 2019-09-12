@@ -2,21 +2,27 @@
   "name": "trello-csv",
   "version": "2.0.0",
   "description": "",
-  "main": "dist/index.js",
+  "main": "dist/app.js",
   "scripts": {
-    "start": "cd dist && node index.js",
-    "build": "rimraf dist && tsc && cd dist && mkdir input-folder && mkdir output-folder",
+    "start": "cd dist && node app.js",
+    "build": "webpack --config webpack.config.js --mode development",
+    "build:prod": "webpack --config webpack.config.js --mode production",
+    "old:build": "rimraf dist && tsc && cd dist && mkdir input-folder && mkdir output-folder",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/exceljs": "^0.5.3",
     "exceljs": "^2.0.1",
     "rimraf": "^3.0.0"
   },
   "devDependencies": {
     "@types/node": "^12.7.5",
-    "typescript": "^3.6.3"
+    "make-dir-webpack-plugin": "^0.1.0",
+    "ts-loader": "^6.1.0",
+    "typescript": "^3.6.3",
+    "webpack": "^4.39.3",
+    "webpack-cli": "^3.3.8",
+    "webpack-dev-server": "^3.8.0"
   }
 }

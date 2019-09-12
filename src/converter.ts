@@ -3,7 +3,7 @@ import { createExcel, writeFile } from './excel';
 import { List } from './models/list.interface';
 import { Member } from './models/member.interface';
 import { TrelloBoard } from './models/trello-board.interface';
-import { getListName, getPriority, getUsersName } from './utils';
+import { getListName, getPriority, getUsersName, openJsonFile } from './utils';
 
 const formatJson = (trelloJson): Object[] => {
   const lists: List[] = trelloJson.lists;
@@ -25,7 +25,7 @@ const formatJson = (trelloJson): Object[] => {
 
 export async function convertFileToXlsx(jsonFileName) {
   console.log('start to convertToCSVFile', jsonFileName)
-  const trelloJson: TrelloBoard = require(`./${INPUT_FOLDER_PATH}${jsonFileName}`);
+  const trelloJson: TrelloBoard = await openJsonFile(`${INPUT_FOLDER_PATH}${jsonFileName}`); // require(`./${INPUT_FOLDER_PATH}${jsonFileName}`);
 
   const formattedJson = formatJson(trelloJson);
   const excel = createExcel(formattedJson);
