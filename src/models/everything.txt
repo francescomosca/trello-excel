@@ -1,0 +1,743 @@
+declare module namespace {
+
+    export interface PerBoard {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface PerCard {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface Attachments {
+        perBoard: PerBoard;
+        perCard: PerCard;
+    }
+
+    export interface TotalMembersPerBoard {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface Boards {
+        totalMembersPerBoard: TotalMembersPerBoard;
+    }
+
+    export interface OpenPerBoard {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface OpenPerList {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface TotalPerBoard {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface TotalPerList {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface Cards {
+        openPerBoard: OpenPerBoard;
+        openPerList: OpenPerList;
+        totalPerBoard: TotalPerBoard;
+        totalPerList: TotalPerList;
+    }
+
+    export interface PerBoard2 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface PerCard2 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface Checklists {
+        perBoard: PerBoard2;
+        perCard: PerCard2;
+    }
+
+    export interface PerChecklist {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface CheckItems {
+        perChecklist: PerChecklist;
+    }
+
+    export interface PerBoard3 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface CustomFields {
+        perBoard: PerBoard3;
+    }
+
+    export interface PerField {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface CustomFieldOptions {
+        perField: PerField;
+    }
+
+    export interface PerBoard4 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface Labels {
+        perBoard: PerBoard4;
+    }
+
+    export interface OpenPerBoard2 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface TotalPerBoard2 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface Lists {
+        openPerBoard: OpenPerBoard2;
+        totalPerBoard: TotalPerBoard2;
+    }
+
+    export interface PerCard3 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface Stickers {
+        perCard: PerCard3;
+    }
+
+    export interface PerAction {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface UniquePerAction {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface Reactions {
+        perAction: PerAction;
+        uniquePerAction: UniquePerAction;
+    }
+
+    export interface Limits {
+        attachments: Attachments;
+        boards: Boards;
+        cards: Cards;
+        checklists: Checklists;
+        checkItems: CheckItems;
+        customFields: CustomFields;
+        customFieldOptions: CustomFieldOptions;
+        labels: Labels;
+        lists: Lists;
+        stickers: Stickers;
+        reactions: Reactions;
+    }
+
+    export interface Prefs {
+        permissionLevel: string;
+        hideVotes: boolean;
+        voting: string;
+        comments: string;
+        invitations: string;
+        selfJoin: boolean;
+        cardCovers: boolean;
+        isTemplate: boolean;
+        cardAging: string;
+        calendarFeedEnabled: boolean;
+        background: string;
+        backgroundImage?: any;
+        backgroundImageScaled?: any;
+        backgroundTile: boolean;
+        backgroundBrightness: string;
+        backgroundColor: string;
+        backgroundBottomColor: string;
+        backgroundTopColor: string;
+        canBePublic: boolean;
+        canBeEnterprise: boolean;
+        canBeOrg: boolean;
+        canBePrivate: boolean;
+        canInvite: boolean;
+    }
+
+    export interface LabelNames {
+        green: string;
+        yellow: string;
+        orange: string;
+        red: string;
+        purple: string;
+        blue: string;
+        sky: string;
+        lime: string;
+        pink: string;
+        black: string;
+    }
+
+    export interface Prefs2 {
+        background: string;
+        selfJoin?: boolean;
+        permissionLevel: string;
+    }
+
+    export interface Old {
+        dueComplete: boolean;
+        pos?: number;
+        idList: string;
+        desc: string;
+        name: string;
+        closed?: boolean;
+        prefs: Prefs2;
+        due?: Date;
+        dueReminder?: any;
+    }
+
+    export interface Card {
+        dueComplete: boolean;
+        id: string;
+        name: string;
+        idShort: number;
+        shortLink: string;
+        pos?: number;
+        idList: string;
+        desc: string;
+        closed?: boolean;
+        due?: Date;
+        dueReminder?: number;
+    }
+
+    export interface Prefs3 {
+        background: string;
+        selfJoin?: boolean;
+        permissionLevel: string;
+    }
+
+    export interface Board {
+        id: string;
+        name: string;
+        shortLink: string;
+        prefs: Prefs3;
+    }
+
+    export interface List {
+        id: string;
+        name: string;
+        pos?: number;
+        closed?: boolean;
+    }
+
+    export interface ListBefore {
+        id: string;
+        name: string;
+    }
+
+    export interface ListAfter {
+        id: string;
+        name: string;
+    }
+
+    export interface Checklist {
+        id: string;
+        name: string;
+    }
+
+    export interface CheckItem {
+        id: string;
+        name: string;
+        state: string;
+    }
+
+    export interface Member {
+        id: string;
+        name: string;
+    }
+
+    export interface CardSource {
+        id: string;
+        name: string;
+        idShort: number;
+        shortLink: string;
+    }
+
+    export interface Attachment {
+        id: string;
+        name: string;
+        url: string;
+    }
+
+    export interface Organization {
+        id: string;
+        name: string;
+    }
+
+    export interface Icon {
+        url: string;
+    }
+
+    export interface Listing {
+        name: string;
+        locale: string;
+        description: string;
+        overview: string;
+    }
+
+    export interface UsageBrackets {
+        boards: number;
+    }
+
+    export interface Plugin {
+        id: string;
+        idOrganizationOwner: string;
+        author: string;
+        capabilities: string[];
+        categories: string[];
+        iframeConnectorUrl: string;
+        name: string;
+        privacyUrl: string;
+        public: boolean;
+        moderatedState?: any;
+        supportEmail: string;
+        tags: any[];
+        isCompliantWithPrivacyStandards?: any;
+        icon: Icon;
+        listing: Listing;
+        usageBrackets: UsageBrackets;
+    }
+
+    export interface Data {
+        old: Old;
+        card: Card;
+        board: Board;
+        list: List;
+        listBefore: ListBefore;
+        listAfter: ListAfter;
+        checklist: Checklist;
+        checkItem: CheckItem;
+        idMember: string;
+        member: Member;
+        cardSource: CardSource;
+        text: string;
+        deactivated?: boolean;
+        attachment: Attachment;
+        memberType: string;
+        idMemberAdded: string;
+        organization: Organization;
+        plugin: Plugin;
+        idMemberInviter: string;
+        method: string;
+    }
+
+    export interface PerAction2 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface UniquePerAction2 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface Reactions2 {
+        perAction: PerAction2;
+        uniquePerAction: UniquePerAction2;
+    }
+
+    export interface Limits2 {
+        reactions: Reactions2;
+    }
+
+    export interface NonPublic {
+    }
+
+    export interface MemberCreator {
+        id: string;
+        activityBlocked: boolean;
+        avatarHash: string;
+        avatarUrl: string;
+        fullName: string;
+        idMemberReferrer: string;
+        initials: string;
+        nonPublic: NonPublic;
+        nonPublicAvailable: boolean;
+        username: string;
+    }
+
+    export interface NonPublic2 {
+    }
+
+    export interface Member2 {
+        id: string;
+        activityBlocked: boolean;
+        avatarHash: string;
+        avatarUrl: string;
+        fullName: string;
+        idMemberReferrer: string;
+        initials: string;
+        nonPublic: NonPublic2;
+        nonPublicAvailable: boolean;
+        username: string;
+    }
+
+    export interface Action {
+        id: string;
+        idMemberCreator: string;
+        data: Data;
+        type: string;
+        date: Date;
+        limits: Limits2;
+        memberCreator: MemberCreator;
+        member: Member2;
+    }
+
+    export interface Emoji {
+    }
+
+    export interface DescData {
+        emoji: Emoji;
+    }
+
+    export interface PerCard4 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface Attachments2 {
+        perCard: PerCard4;
+    }
+
+    export interface PerCard5 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface Checklists2 {
+        perCard: PerCard5;
+    }
+
+    export interface PerCard6 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface Stickers2 {
+        perCard: PerCard6;
+    }
+
+    export interface Limits3 {
+        attachments: Attachments2;
+        checklists: Checklists2;
+        stickers: Stickers2;
+    }
+
+    export interface Trello {
+        board: number;
+        card: number;
+    }
+
+    export interface AttachmentsByType {
+        trello: Trello;
+    }
+
+    export interface Badges {
+        attachmentsByType: AttachmentsByType;
+        location: boolean;
+        votes: number;
+        viewingMemberVoted: boolean;
+        subscribed: boolean;
+        fogbugz: string;
+        checkItems: number;
+        checkItemsChecked: number;
+        comments: number;
+        attachments: number;
+        description: boolean;
+        due?: Date;
+        dueComplete: boolean;
+    }
+
+    export interface Label {
+        id: string;
+        idBoard: string;
+        name: string;
+        color: string;
+    }
+
+    export interface Cover {
+        idAttachment?: any;
+        color?: any;
+        idUploadedBackground?: any;
+        size: string;
+        brightness: string;
+    }
+
+    export interface Attachment2 {
+        bytes: number;
+        date: Date;
+        edgeColor?: any;
+        idMember: string;
+        isUpload: boolean;
+        mimeType?: any;
+        name: string;
+        previews: any[];
+        url: string;
+        pos: number;
+        id: string;
+    }
+
+    export interface PluginData {
+        id: string;
+        idPlugin: string;
+        scope: string;
+        idModel: string;
+        value: string;
+        access: string;
+    }
+
+    export interface Card2 {
+        id: string;
+        address?: any;
+        checkItemStates?: any;
+        closed: boolean;
+        coordinates?: any;
+        creationMethod?: any;
+        dateLastActivity: Date;
+        desc: string;
+        descData: DescData;
+        dueReminder?: number;
+        idBoard: string;
+        idLabels: string[];
+        idList: string;
+        idMembersVoted: any[];
+        idShort: number;
+        idAttachmentCover?: any;
+        limits: Limits3;
+        locationName?: any;
+        manualCoverAttachment: boolean;
+        name: string;
+        pos: number;
+        shortLink: string;
+        badges: Badges;
+        dueComplete: boolean;
+        due?: Date;
+        email: string;
+        idChecklists: string[];
+        idMembers: string[];
+        labels: Label[];
+        shortUrl: string;
+        subscribed: boolean;
+        url: string;
+        cover: Cover;
+        attachments: Attachment2[];
+        pluginData: PluginData[];
+        customFieldItems: any[];
+    }
+
+    export interface Label2 {
+        id: string;
+        idBoard: string;
+        name: string;
+        color: string;
+    }
+
+    export interface OpenPerList2 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface TotalPerList2 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface Cards2 {
+        openPerList: OpenPerList2;
+        totalPerList: TotalPerList2;
+    }
+
+    export interface Limits4 {
+        cards: Cards2;
+    }
+
+    export interface List2 {
+        id: string;
+        name: string;
+        closed: boolean;
+        idBoard: string;
+        pos: number;
+        subscribed: boolean;
+        softLimit?: any;
+        limits: Limits4;
+        creationMethod?: any;
+    }
+
+    export interface Emoji2 {
+    }
+
+    export interface BioData {
+        emoji: Emoji2;
+    }
+
+    export interface NonPublic3 {
+    }
+
+    export interface Member3 {
+        id: string;
+        activityBlocked: boolean;
+        avatarHash: string;
+        avatarUrl: string;
+        bio: string;
+        bioData: BioData;
+        confirmed: boolean;
+        fullName: string;
+        idEnterprise?: any;
+        idEnterprisesDeactivated: any[];
+        idMemberReferrer: string;
+        idPremOrgsAdmin: any[];
+        initials: string;
+        memberType: string;
+        nonPublic: NonPublic3;
+        nonPublicAvailable: boolean;
+        products: any[];
+        url: string;
+        username: string;
+        status: string;
+    }
+
+    export interface PerChecklist2 {
+        status: string;
+        disableAt: number;
+        warnAt: number;
+    }
+
+    export interface CheckItems2 {
+        perChecklist: PerChecklist2;
+    }
+
+    export interface Limits5 {
+        checkItems: CheckItems2;
+    }
+
+    export interface Emoji3 {
+    }
+
+    export interface NameData {
+        emoji: Emoji3;
+    }
+
+    export interface CheckItem2 {
+        idChecklist: string;
+        state: string;
+        id: string;
+        name: string;
+        nameData: NameData;
+        pos: number;
+    }
+
+    export interface Checklist2 {
+        id: string;
+        name: string;
+        idBoard: string;
+        idCard: string;
+        pos: number;
+        limits: Limits5;
+        creationMethod?: any;
+        checkItems: CheckItem2[];
+    }
+
+    export interface Membership {
+        id: string;
+        idMember: string;
+        memberType: string;
+        unconfirmed: boolean;
+        deactivated: boolean;
+    }
+
+    export interface PluginData2 {
+        id: string;
+        idPlugin: string;
+        scope: string;
+        idModel: string;
+        value: string;
+        access: string;
+    }
+
+    export interface RootObject {
+        id: string;
+        name: string;
+        desc: string;
+        descData?: any;
+        closed: boolean;
+        idOrganization: string;
+        limits: Limits;
+        pinned: boolean;
+        starred: boolean;
+        url: string;
+        prefs: Prefs;
+        shortLink: string;
+        subscribed: boolean;
+        labelNames: LabelNames;
+        powerUps: any[];
+        dateLastActivity: Date;
+        dateLastView: Date;
+        shortUrl: string;
+        idTags: any[];
+        datePluginDisable?: any;
+        creationMethod?: any;
+        ixUpdate: string;
+        templateGallery?: any;
+        actions: Action[];
+        cards: Card2[];
+        labels: Label2[];
+        lists: List2[];
+        members: Member3[];
+        checklists: Checklist2[];
+        customFields: any[];
+        memberships: Membership[];
+        pluginData: PluginData2[];
+    }
+
+}
